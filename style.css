@@ -1,0 +1,1494 @@
+@font-face {
+    font-family: myFont;
+    src: url(img/weddingreception.ttf);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+}
+
+.plus-jakarta-sans-400 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-style: normal;
+    background-color: white;
+    font-size: 14px;
+    position: relative;
+    display: flex;
+}
+
+.screen.active {
+    display: grid;
+    width: 100%;
+}
+
+.screen {
+    position: absolute;
+    display: none;
+}
+
+
+.fade-in {
+    animation: fadeIn 1s forwards;
+}
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.crimson-text-regular {
+    font-family: "Crimson Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.josefin-sans-400 {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Open Invitation */
+#welcome-screen {
+    display: grid;
+    align-items: center;
+    grid-template-areas: 
+    'content'
+    'image-container'
+    'image-container';
+    justify-items: center;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    width: 40%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    grid-area: content;
+    min-height: 20vh;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.content h6 {
+    letter-spacing: 10px;
+    font-size: 1em;
+}
+
+.content h5 {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    letter-spacing: 5px;
+    padding: 10px 50px;
+    font-size: 1.2em;
+}
+
+#name {
+    text-transform: uppercase;
+    color: white;
+}
+
+#invited {
+    color: white;
+}
+
+#welcome-screen span {
+    font-size: 4em;
+    font-family: myFont;
+    color: white;
+}
+
+.image-container {
+    grid-area: image-container;
+    min-height: 80vh;
+    background-image: url(img/carousell.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 50px 20px;
+    width: 100%;
+}
+
+.open-full-invitation {
+    font-size: 1em;
+    padding: 5px 10px;
+    border: 1px solid black;
+    transition: 0.5s;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+}
+
+.open-full-invitation:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+/* Bagian Atas */
+.bagianatas {
+    background-image: url(img/banner.jpg);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0px 4px 4px 1000px rgba(0, 0, 0, 0.2);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Header */
+.header {
+    display: grid;
+    grid-template-areas: 
+    'hero'
+    'feature-1'
+    'feature-2';
+    gap: 30px;
+}
+
+.hero {
+    grid-area: hero;
+    place-content: center;
+    text-align: center;
+    color: white;
+    letter-spacing: 10px;
+    text-shadow: 5px 7px 9px rgba(0,0,0,1);
+}
+
+.features {
+    color: white;
+    display: grid;
+    place-content: center;
+    text-align: center;
+}
+
+.feature-1 {
+    letter-spacing: 20px;
+    text-shadow: 5px 7px 9px rgba(0,0,0,1);
+}
+
+.feature-2 {
+    background-position: center;
+    background-size: cover;
+    letter-spacing: 20px;
+    text-shadow: 5px 7px 9px rgba(0,0,0,1);
+}
+
+/* Navigation */
+.backgroundnav {
+    background-color: transparent;
+    transition: all 0.5s ease;
+    box-sizing: border-box;
+}
+
+.menu {
+    order: -1;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 20px auto;
+    width: 80%;
+    background-color: transparent;
+    transition: all 1s ease;
+    box-sizing: border-box;
+}
+
+.backgroundnav-scrolled {
+    background-color: #565551;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.menu .brand {
+    color: white;
+    letter-spacing: 5px;
+    margin-block-end: 0px;
+}
+
+.brand a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+    font-size: 1.2em;
+}
+
+.menu-list {
+    padding-inline-start: 0px;
+    margin-block-end: 0px;
+}
+
+.menu .list {
+    display: block;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.menu .list:hover {
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+}
+
+/* Hamburge Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+.menu-toggle input {
+    display: block;
+    position: absolute;
+    background-color: black;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+    background-color: white;
+    transform: rotate(45deg);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+    background-color: white;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+    transform: scale(0);
+    opacity: 0;
+}
+
+/* Ayat */
+.bagianayat {
+    height: 40vh;
+    display: grid;
+    align-items: center;
+    background-color: #fff;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.ourclasses {
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.backgroundayat {
+    width: 200px;
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    opacity: 30%;
+}
+
+.isiayat, .alamatayat {
+    position: relative;
+    z-index: 2;
+}
+
+/* Groom dan Bride */
+.groombride {
+    display: grid;
+    grid-template-areas: 
+    'together together groom'
+    'together together bride';
+}
+
+.fotobersama {
+    grid-area: together;
+    background-image: url(img/fotobersama.jpg);
+    background-size: cover;
+    background-position: 50% 30%;
+    min-height: 100vh;
+}
+
+.thegroom {
+    display: grid;
+    grid-area: groom;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 0.9fr));
+}
+
+.thebride {
+    display: grid;
+    grid-area: bride;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 0.9fr));
+}
+
+.gambargroom {
+    background-image: url(img/groom.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.gambarbride {
+    background-image: url(img/bride.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.informasigroom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.informasibride {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.informasibride p, .informasigroom p {
+    opacity: 60%;
+    font-size: 1.3em;
+}
+
+.dekorasi-1 {
+    width: 200px;
+    position: absolute;
+    top: -11%;
+    left: -12%;
+    rotate: 130deg;
+}
+
+.dekorasi-2 {
+    width: 200px;
+    position: absolute;
+    bottom: -11%;
+    right: -12%;
+    rotate: -60deg;
+}
+
+/* Countdown */
+.countdown {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    color: black;
+    width: 100%;
+    padding: 50px;
+    padding-top: 100px;
+}
+
+.savedthedate {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+}
+
+.savedthedate h1 {
+    letter-spacing: 10px;
+    font-size: 4em;
+}
+
+.savedthedate h5 {
+    letter-spacing: 5px;
+    word-spacing: 10px;
+    margin-bottom: 50px;
+}
+
+.informasiacara {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+/* section: weddingtalk */
+.acara {
+    background-color: #E8CFCA;
+    padding: 50px;
+    box-sizing: border-box;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 500px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.acara h2 {
+    letter-spacing: 8px;
+    border-bottom: 1px solid black;
+}
+
+.acara p {
+    font-size: 1.2em;
+}
+
+.acara p span{
+    opacity: 70%;
+}
+
+.acara h6{
+    font-size: 1.5em;
+    letter-spacing: 3px;
+}
+
+
+.map-button a {
+    text-decoration: none;
+    color: black;
+    transition: 0.5s;
+    width: 200px;
+    background-color: #E8CFCA;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    font-size: 14px;
+}
+
+.map-button a:hover {
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+}
+
+.save-button a {
+    text-decoration:  none;
+    padding: 10px 50px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    font-size: 14px;
+    transition: 0.5s;
+    background-color: #fff;
+    color: black;
+}
+
+.save-button a:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+.launch-time {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 50px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.launch-time .box-cover {
+    display: grid;
+    gap: 5px;
+    justify-items: center;
+}
+
+.launch-time .box-cover .waktu  {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 8px;
+}
+
+.launch-time .box-cover .waktu p {
+    font-size: 4em;
+    color: black;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+}
+
+.launch-time div span {
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+/* Gallery */
+.gallery {
+    padding-top: 100px;
+    display: grid;
+    width: 100%;
+}
+
+.gallery h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: 10px;
+    font-size: 4em;
+}
+
+.album {
+    display: grid;
+    width: 100%;
+    grid-template-areas:
+    'p1 p1 p2 p2 p3 p3'
+    'p4 p4 p5 p5 p6 p6'
+    'p8 p8 p9 p9 p10 p10';
+}
+
+.album img {
+    height: 450px;
+    object-fit: cover;
+}
+
+.album img:hover {
+    opacity: 70%;
+    cursor: pointer;
+}
+
+.picture1 {
+    grid-area: p1;
+    object-position: 0% 30%;
+}
+.picture2 {
+    grid-area: p2;
+    object-position: 0% 50%;
+}
+.picture3 {
+    grid-area: p3;
+    object-position: 0% 50%;
+}
+.picture4 {
+    grid-area: p4;
+    object-position: 0% 55%;
+}
+.picture5 {
+    grid-area: p5;
+    object-position: 0% 30%;
+}
+.picture6 {
+    grid-area: p6;
+    object-position: 0% 65%;
+}
+.picture7 {
+    grid-area: p7;
+    object-position: 0% 28%;
+}
+.picture8 {
+    grid-area: p8;
+    object-position: 0% 60%;
+}
+.picture9 {
+    grid-area: p9;
+    object-position: 0% 50%;
+}
+.picture10 {
+    grid-area: p10;
+    object-position: 0% 40%;
+}
+
+/* WISHES */
+.guestbook {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    color: black;
+    width: 100%;
+    padding: 50px;
+    padding-top: 100px;
+}
+
+.guest-container {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+}
+
+.guestbook h1 {
+    letter-spacing: 10px;
+    font-size: 4em;
+}
+
+.guestbook h5 {
+    margin-bottom: 50px;
+}
+
+.guestcontent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    padding: 50px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.guestbook .guestcontent .bookcontent {
+    text-align: left;
+    padding: 50px;
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 500px;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 30%;
+    translate: -50% -50%;
+}
+
+.guestbook .guestcontent .fotoguest {
+    height: 700px;
+    width: 500px;
+    object-fit: cover;
+}
+
+.fullname {
+    margin-bottom: 30px;
+}
+
+.form-control {
+    border-radius: 0px;
+    font-size: 14px;
+}
+
+.yourwishes {
+    margin-bottom: 30px;
+}
+
+.sendwishes {
+    color: black;
+    background-color: white;
+    border-radius: 0px;
+    border: 1px solid black;
+    box-shadow: 0px;
+}
+
+.sendwishes:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Send Gift */
+.sendgift {
+    height: 200px;
+    display: flex;
+    justify-items: center;
+    width: 100%;
+    background-color: #565551;
+    margin-top: 100px;
+}
+
+.sendgift-container {
+    color: white;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.gift {
+    padding: 10px 15px;
+    border: 1px solid black;
+    font-size: 1em;
+    transition: 0.5s;
+    width: 200px;
+    background-color: #fff;
+    color: black;
+    text-align: center;
+    justify-self: end;
+    font-weight: bold;
+}
+
+.gift:hover {
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+/* Guest Book */
+.wishes-container {
+    display: grid;
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+.guest-judul h1 {
+    letter-spacing: 10px;
+    font-size: 4em;
+}
+
+.guest-judul h5 {
+    margin-bottom: 50px;
+}
+
+.guest-judul {
+    text-align: center;
+}
+
+.guest-book-entries {
+    text-align: left;
+    max-height: 500px; 
+    overflow-y: auto;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.guest-book-entries .ha {
+    margin-bottom: 50px;
+}
+
+.entry {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* Modal */
+.modal-header {
+    display: grid;
+    grid-template-rows: 0.5fr 1fr;
+    position: relative;
+    align-items: center;
+    justify-items: center;
+}
+
+.modal-header p {
+    font-size: 16px;
+    text-align: center;
+}
+
+
+.modal-header button {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-body img{
+    width: 100px;
+}
+
+/* Thank You */
+.thankyou {
+    background-image: url(img/footer.jpg);
+    display: grid;
+    background-size: cover;
+    height: 400px;
+    margin-top: 100px;
+    box-shadow: inset 0px 4px 4px 1000px rgba(0, 0, 0, 0.5);
+    background-position: 0% 60%;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    align-content: center;
+    text-shadow: 5px 7px 9px rgba(0,0,0,1);
+}
+
+/* Footer */
+footer {
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 50px 0px 50px 0;
+}
+
+footer a{
+    text-decoration: none;
+    color: black;
+}
+
+.modal {
+    z-index: 1050; /* Default Bootstrap z-index */
+}
+
+.modal-backdrop {
+    z-index: 1040; /* Default Bootstrap backdrop z-index */
+}
+
+/* Music */
+.music {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.music .fab {
+    width: 55px;
+    height: 55px;
+    background-color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #000000;
+    box-shadow: 0 10px 20px rgba(255, 26, 26, 0.22);
+    cursor: pointer;
+}
+
+.fab-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    user-select: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+.fab-container:hover {
+    height: 100%;
+}
+
+.fab-container .fab {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    z-index: 10;
+  }
+  .fab-container .fab::before {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 35px;
+    width: 35px;
+    background-color: inherit;
+    border-radius: 0 0 10px 0;
+    z-index: -1;
+  }
+  .fab-container .fab .fab-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+
+/* Responsive Breakpoint */
+/* PC / LAPTOP */
+@media screen and (max-width: 1024px) {
+    #welcome-screen {
+        width: 70%;
+    }
+    .menu {
+        order: inherit;
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5em;
+    }
+
+    .groombride {
+        display: grid;
+        grid-template-areas:
+        'together' 
+        'groom'
+        'bride';
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .fotobersama {
+        min-height: 50vh;
+    }
+    
+    .thegroom {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 0.9fr));
+    }
+    
+    .thebride {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 0.9fr));
+    }
+
+    .gambarbride {
+        background-position: 100% 50%;
+    }
+
+    .acara h2 {
+        letter-spacing: 5px;
+        border-bottom: 1px solid black;
+    }
+    
+    .acara h6{
+        font-size: 1.5em;
+        letter-spacing: 1px;
+    }
+}
+
+/* TABLET */
+@media screen and (max-width: 768px) {
+    .content h6 {
+        font-size: 0.8em;
+    }
+    
+    .content h5 {
+        font-size: 1em;
+    }
+
+    #welcome-screen span {
+        font-size: 3.6em;
+        font-family: myFont;
+        color: white;
+    }
+
+    .menu{
+        order: -1;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .menu .brand {
+        order: -1;
+    }
+
+    .menu-toggle {
+        display: flex;
+        justify-self: end;
+    }
+
+    .menu .brand {
+        font-size: 1.2em;
+    }
+
+    header .hero  h5 {
+        font-size: 1em;
+        letter-spacing: 10px;
+    }
+
+    header .feature-1 h1{
+        font-size: 1.4em;
+        letter-spacing: 12px;
+    }
+
+    header .feature-2 h4{
+        font-size: 1.2em;
+        letter-spacing: 15px;
+    }
+
+    .menu ul {
+        display: flex;
+        position: absolute;
+        right: 0;
+        height: 30vh;
+        top: 0;
+        background-color: #565551;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: start;
+        z-index: 1;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 0.5s;
+    }
+
+    .menu ul.slide {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2em;
+    }
+
+    .menu-list a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        padding: 5px;
+        border-bottom: 1px solid white;
+        font-size: 1em;
+    }
+    
+    .header {
+        padding: 50px;
+    }
+
+    .menu-list {
+        padding-left: 60px;
+    }
+
+    .ourclasses {
+        width: 85%;
+    }
+
+    .backgroundayat {
+        width: 150px;
+    }
+
+    .alamatayat h6 {
+        font-size: 1.1em;
+    }
+
+    .isiayat h4 {
+        font-size: 1.4em;
+    }
+
+    .dekorasi-1, .dekorasi-2 {
+        width: 180px;
+    }
+
+    .dekorasi-1 {
+        top: -11%;
+        left: -12%;
+        rotate: 130deg;
+    }
+    
+    .dekorasi-2 {
+        bottom: -11%;
+        right: -12%;
+        rotate: -60deg;
+    }
+
+    .informasigroom, .informasibride{
+        padding: 30px;
+    }
+
+    .informasigroom h6, .informasibride h6{
+        font-size: 1em;
+    }
+
+    .informasigroom h2, .informasibride h2 {
+        font-size: 1.7em;
+    }
+
+    .informasigroom p, .informasibride p {
+        font-size: 1.1em;
+    }
+
+    .informasiacara {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .savedthedate h1 {
+        letter-spacing: 7px;
+        font-size: 2.5em;
+    }
+    
+    .savedthedate h5 {
+        font-size: 1.2em;
+    }
+
+    .acara {
+        padding: 30px;
+        min-height: 400px;
+        margin-bottom: 30px;
+    }
+
+    .launch-time .box-cover .waktu p {
+        font-size: 3em;
+    }
+    
+    .launch-time div span {
+        font-size: 0.8em;
+    }
+
+    .launch-time {
+        gap: 40px;
+    }
+
+    .gallery h1 {
+        letter-spacing: 7px;
+        font-size: 2.5em;
+    }
+
+    .album img {
+        height: 300px;
+    }
+
+    .guest-container h1 {
+        letter-spacing: 7px;
+        font-size: 2.5em;
+    }
+
+    .guest-container h5 {
+        font-size: 1.2em;
+    }
+
+
+    .guestcontent {
+        grid-template-rows: 1fr 0.5fr;
+        grid-template-columns: minmax(100px, 1fr);
+        padding: 0px;
+    }
+
+    .guestbook .guestcontent .fotoguest {
+        order: -1;
+        width: 100%;
+        height: 400px;
+        object-position: 0% 25%;
+    }
+
+    .guestbook .guestcontent .bookcontent {
+        top: 60%;
+        left: 50%;
+        translate: -50% 0%;
+        padding: 20px;
+        width: 400px;
+        font-size: 0.9em;
+    }
+
+    .guest-container {
+        width: 100%;
+    }
+    
+    .form-control {
+        font-size: 0.9em;
+    }
+    
+    .sendwishes {
+        font-size: 1.1em;
+    }
+
+    .sendgift-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        box-sizing: border-box;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .guest-judul h1 {
+        letter-spacing: 7px;
+        font-size: 2.5em;
+    }
+    
+    .guest-judul h5 {
+        font-size: 1.2em;
+    }
+
+    .wishes-container {
+        width: 80%;
+    }
+
+    .thankyou {
+        height: 200px;
+        margin-top: 100px;
+        background-position: 0% 60%;
+    }
+
+    .thankyou h1 {
+        font-size: 2.2em;
+    }
+
+    .thankyou h5 {
+        font-size: 1em;
+    }
+}
+
+/* HANDPHONE */
+@media screen and (max-width: 500px) {
+    #welcome-screen {
+        width: 100%;
+    }
+
+    .menu .brand {
+        display: none;
+    }
+
+    .menu{
+        order: -1;
+        grid-template-columns: 1fr;
+        justify-items: end;
+        margin: 15px auto;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    
+    header .hero  h5 {
+        letter-spacing: 5px;
+    }
+
+    header .feature-1 h1{
+        letter-spacing: 7px;
+    }
+
+    header .feature-2 h4{
+        letter-spacing: 10px;
+    }
+    
+
+    .menu-list {
+        padding-left: 40px;
+    }
+
+    .backgroundayat {
+        width: 100px;
+    }
+
+    .alamatayat h6 {
+        font-size: 0.9em;
+    }
+
+    .isiayat h4 {
+        font-size: 1em;
+    }
+
+    .fotobersama {
+        min-height: 40vh;
+    }
+    
+    .dekorasi-1, .dekorasi-2 {
+        display: none;
+    }
+
+    .informasigroom, .informasibride{
+        padding: 10px;
+    }
+
+    .informasigroom h6, .informasibride h6{
+        font-size: 0.8em;
+    }
+
+    .informasigroom h2, .informasibride h2 {
+        font-size: 1.5em;
+    }
+
+    .informasigroom p, .informasibride p {
+        font-size: 0.9em;
+    }
+
+    .savedthedate h1 {
+        letter-spacing: 5px;
+        font-size: 2em;
+    }
+    
+    .savedthedate h5 {
+        font-size: 1em;
+    }
+
+    .acara {
+        padding: 20px;
+        min-height: 300px;
+        margin-bottom: 20px;
+    }
+
+    .acara h2 {
+        letter-spacing: 7px;
+        font-size: 1.4em;
+    }
+    
+    .acara p {
+        font-size: 1em;
+    }
+    
+    .acara h6{
+        font-size: 1.2em;
+        letter-spacing: 2px;
+    }
+
+    .launch-time .box-cover .waktu p {
+        font-size: 2em;
+    }
+    
+    .launch-time div span {
+        font-size: 0.7em;
+    }
+
+    .launch-time {
+        gap: 30px;
+    }
+
+    .map-button a {
+        width: 150px;
+        padding: 10px 30px;
+        font-size: 0.8em;
+    }
+    
+    .save-button a {
+        padding: 10px 50px;
+        font-size: 0.8em;
+    }
+
+    .gallery h1 {
+        letter-spacing: 5px;
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    
+    .album img {
+        height: 200px;
+    }
+
+    .guest-container h1 {
+        letter-spacing: 5px;
+        font-size: 2em;
+    }
+
+    .guest-containerh5 {
+        font-size: 1em;
+    }
+
+    .guestbook {
+        padding: 0px;
+        padding-top: 100px;
+    }
+
+    .guestbook .guestcontent .bookcontent {
+        padding: 15px;
+        width: 300px;
+        font-size: 0.8em;
+    }
+    
+    .form-control {
+        font-size: 0.8em;
+    }
+
+    .guestbook .guestcontent .fotoguest {
+        height: 300px;
+        object-position: 0% 25%;
+    }
+
+    .sendgift {
+        margin-top: 150px;
+    }
+
+    .sendgift .tekscontent h1 {
+        font-size: 1.8em;
+    }
+
+    .sendgift .tekscontent p {
+        font-size: 0.8em;
+    }
+
+    .gift {
+        padding: 5px 10px;
+        font-size: 0.8em;
+        transition: 0.5s;
+        width: 150px;               
+    }
+
+    .wishes-container {
+        width: 90%;
+    }
+
+    .guest-judul h1 {
+        letter-spacing: 5px;
+        font-size: 2em;
+    }
+
+    .guest-judul h5 {
+        font-size: 1em;
+    }
+
+    .guest-book-entries .entry p {
+        font-size: 0.8em;
+    }
+
+    .guest-book-entries .entry .ha {
+        margin-bottom: 30px;
+    }
+
+    .thankyou {
+        height: 150px;
+        margin-top: 100px;
+        background-position: 0% 60%;
+    }
+
+    .thankyou h1 {
+        font-size: 1.8em;
+    }
+
+    .thankyou h5 {
+        font-size: 0.8em;
+    }
+
+    .thankyou p {
+        font-size: 0.8em;
+    }
+
+    footer a{
+        font-size: 0.8em;
+    }
+}
